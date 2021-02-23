@@ -1,5 +1,10 @@
 # The main file for this project. 
-# USAGE
+# USAGE:
+#   No arguments: loops rainbow cycle with default arguments
+#   -cleanup: runs pixels.deinit() and exits
+#   -solid r g b: sets the 
+#   -loop_rc wait width: loops rainbow cycle with sleep interval: wait and period: width
+
 import sys
 import effects
 
@@ -30,8 +35,6 @@ def main():
         else:
             loop_rc()
     except:
-        pass
-    finally:
         effects.cleanup()
 
 if __name__ == "__main__":
