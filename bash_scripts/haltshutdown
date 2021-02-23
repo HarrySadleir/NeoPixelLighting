@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/home/pi/projects/neopixel_project/bash_scripts/haltmain
+sudo shutdown -h now

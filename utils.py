@@ -1,3 +1,7 @@
+# A series of utility functions that do not depend on neopixel
+# or Raspberry Pi specific libraries
+
+
 # INPUTS: rgb color in ([0,255], [0,255], [0,255])
 # OUTPUTS: hsv color in ([0,360], [0,1], [0,1])
 # EFFECT: Returns given rgb color in hsv

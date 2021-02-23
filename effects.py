@@ -1,4 +1,4 @@
-import neopixel_utils as utils
+import utils
 import time
 import board
 import neopixel
@@ -13,6 +13,7 @@ num_pixels = 300
 # Set the order of neopixel's expected input
 ORDER = neopixel.GRB
 
+# Initialize pixels object
 pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
 )
@@ -31,12 +32,17 @@ def rainbow_cycle(wait=0.001, width=num_pixels):
         pixels.show()
         time.sleep(wait)
 
+# EFFECTS:
+#   - Neatly turns off pixels and cleanup GPIO usage
 def cleanup():
     pixels.fill((0,0,0))
     pixels.show()
     RPi.GPIO.cleanup()
-    print("\nCleaned up GPIO resources.")
+    print("Cleaned up GPIO resources.")
 
-
+# EFFECTS: sets the pixels to a single colour
+def solid(r, g, b):
+    pixels.fill((r, g, b))
+    pixels.show()
 
     
