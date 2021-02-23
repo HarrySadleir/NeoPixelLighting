@@ -29,7 +29,9 @@ def main():
                 
         else:
             loop_rc()
-    except KeyboardInterrupt:
+    except:
+        pass
+    finally:
         effects.cleanup()
 
 if __name__ == "__main__":

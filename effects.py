@@ -35,10 +35,11 @@ def rainbow_cycle(wait=0.001, width=num_pixels):
 # EFFECTS:
 #   - Neatly turns off pixels and cleanup GPIO usage
 def cleanup():
-    pixels.fill((0,0,0))
-    pixels.show()
-    RPi.GPIO.cleanup()
-    print("Cleaned up GPIO resources.")
+    try:
+        pixels.deinit()
+    except:
+        print("Cleaned up GPIO resources.")
+    
 
 # EFFECTS: sets the pixels to a single colour
 def solid(r, g, b):
