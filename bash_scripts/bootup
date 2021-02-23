@@ -1,0 +1,5 @@
+#!/bin/bash
+# Ran at startup through /etc/rc.local
+
+sudo python3 /home/pi/projects/neopixel_project/main.py 
+
