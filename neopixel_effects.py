@@ -23,7 +23,6 @@ pixels = neopixel.NeoPixel(
 # EFFECTS:
 #   - produces a rainbow that moves along the strip
 def rainbow_cycle(wait=0.001, width=num_pixels):
-    print(width)
     for i in range(255):
         for j in range(num_pixels):
             x = int((j % width) * 256. / width)
