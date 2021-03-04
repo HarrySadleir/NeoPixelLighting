@@ -13,7 +13,7 @@ def loop_rc():
         if len(sys.argv) == 4:
             effects.rainbow_cycle(float(sys.argv[2]), int(sys.argv[3]))
         else:
-            effects.rainbow_cycle()
+            effects.rainbow_cycle(wait = 0.01)
         
 
 def main():

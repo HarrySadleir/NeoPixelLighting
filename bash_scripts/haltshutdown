@@ -3,4 +3,4 @@
 
 /home/pi/projects/neopixel_project/bash_scripts/haltmain
 echo "Shutting down now"
-sudo shutdown now
+sudo shutdown -h now

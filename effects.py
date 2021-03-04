@@ -25,12 +25,16 @@ pixels = neopixel.NeoPixel(
 #   - produces a rainbow that moves along the strip
 def rainbow_cycle(wait=0.001, width=num_pixels):
     for i in range(255):
-        for j in range(num_pixels):
-            x = int((j % width) * 256. / width)
-            x = x + i & 255
-            pixels[j] = utils.wheel(x)
-        pixels.show()
-        time.sleep(wait)
+        rainbow(i, wait)
+        
+
+def rainbow(i, wait=0.001, width=num_pixels):
+    for j in range(num_pixels):
+        x = int((j % width) * 256. / width)
+        x = x + i & 255
+        pixels[j] = utils.wheel(x)
+    pixels.show()
+    time.sleep(wait)
 
 # EFFECTS:
 #   - Neatly turns off pixels and cleanup GPIO usage
@@ -38,6 +42,7 @@ def cleanup():
     try:
         pixels.deinit()
     except:
+        time.sleep(1)
         print("Cleaned up GPIO resources.")
     
 
