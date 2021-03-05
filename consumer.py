@@ -26,7 +26,7 @@ def activate(command, it):
 if __name__ == "__main__":
     # variable of the last command received, used in case no signal is sent
     # initial state will be first command called
-    lastcommand = 'off'
+    lastcommand = 'rainbowcycle'
 
     # variable for time dependant iteration
     it = 0

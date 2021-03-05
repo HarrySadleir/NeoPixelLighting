@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    $('#turnOnBtn').on('click', function(e){
+    $('#rainbowCycleBtn').on('click', function(e){
         $.ajax({
-            url: '/piapp?status=on',
+            url: '/piapp?status=rc',
             method: 'GET',
             success: function(result) {
                 console.log(result);
@@ -13,28 +13,6 @@ $(document).ready(function() {
     $('#turnOffBtn').on('click', function(e){
         $.ajax({
             url: '/piapp?status=off',
-            method: 'GET',
-            success: function(result) {
-                console.log(result);
-         }
-        });
-        e.preventDefault();
-    });
-    
-    $('#btnToggle').on('click', function(e){
-        let status;
-        if($(this).text() == 'Turn On') {
-            $(this).text('Turn Off')
-            $(this).removeClass().addClass('btn btn-block btn-light');
-            status = 'on';
-        } else {
-            $(this).text('Turn On');
-            $(this).removeClass().addClass('btn btn-block btn-dark');
-            status = 'off';
-        }
-        
-        $.ajax({
-            url: '/piapp?status=' + status,
             method: 'GET',
             success: function(result) {
                 console.log(result);
